@@ -6,8 +6,16 @@
 #include <map>
 
 
+#include "servidor.h"
+
 // Sistema deve concentrar todas as operações do Concordo
 class Sistema {
+		private:
+
+			vector<Usuario> Usuarios;
+			map <int, pair<unsigned int, unsigned int> > Logados;
+			vector<Servidor> servers;
+
   	public:
 
 		/*! Encerra o funcionamento do Concordo, o programa termina ao executar este comando.
