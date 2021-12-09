@@ -1,6 +1,12 @@
+#ifndef Servidor_h //essa proteção é necessária em C/C++ para evitar inclusão duplicada do arquivo
+#define Servidor_h
+
 #include <iostream>
 
-#include "Canal_texto.h"
+//#include "Canal_texto.h" removi pois não precisa pro checkin 3
+#include "Usuario.h" //precisei colocar
+
+//vc precisa separar implementação de .hpp
 class Servidor
 {
 private:
@@ -8,8 +14,8 @@ private:
   std::string codigo_convite = "";
   std::string nome;
   std::string descricao;
-  vector<Usuario*> integrantes;
-  vector<Canal_texto> canais;
+  std::vector<Usuario*> integrantes;//precisa do std::
+  //std::vector<Canal_texto> canais; //removi pq não precisa pro checkin 3
   Usuario* dono;
   
 
@@ -23,6 +29,7 @@ public:
   void modifica_convite(std::string novo);
 };
 
+//essa parte aqui fica em Servidor.cpp, vc precisa atualizar o CMakeLists para incluir Servidor.cpp na compilação
 Servidor::Servidor(unsigned int id, std::string Nome, Usuario* DONO)
 {
   ID = id;
@@ -52,3 +59,5 @@ return nome;
 void  Servidor::modifica_convite(std::string novo){
   codigo_convite = novo;
 }
+
+#endif

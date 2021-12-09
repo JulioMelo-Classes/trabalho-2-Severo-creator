@@ -16,6 +16,8 @@ string Sistema::quit() {
   return "Saindo...";
 }
 
+//Checkin 3, corrigi diversos erros de compilação nos .h, não vou corrigir aqui
+//vou considerar 0.1 pelo esforço.
 string Sistema::create_user (const string email, const string senha, const string nome) {
 	int id_user = Usuarios.size();
 	for(int i = 0; i <Usuarios.size() ; i++){

@@ -1,3 +1,6 @@
+#ifndef Usuario_h //precisa colocar senão vai dar redefinição
+#define Usuario_h
+
 #include <iostream>
 
 class Usuario
@@ -16,6 +19,7 @@ public:
   unsigned int retorna_ID();
 };
 
+//essa parte aqui fica em Usuario.cpp
 Usuario::Usuario(std::string em, std::string sen, std::string nom, unsigned int id)
 {
   this->email = em;
@@ -38,3 +42,4 @@ unsigned int Usuario::retorna_ID(){
   return ID;
 }
 
+#endif
