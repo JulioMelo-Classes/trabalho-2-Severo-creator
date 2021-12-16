@@ -1,21 +1,22 @@
 #ifndef SISTEMA_H
 #define SISTEMA_H
+#include "Usuario.h"
+#include "Servidor.h"
+#include "Canal.h"
+
 #include <vector>
 #include <string>
 #include <iostream>
 #include <map>
 
 
-#include "Servidor.h" //S maiusculo também 
-#include "Usuario.h" //precisa incluir usuario tb
-
 // Sistema deve concentrar todas as operações do Concordo
 class Sistema {
 		private:
+		std::vector<Usuario*> Usuarios;
+		std::map <int, std::pair<unsigned int, unsigned int> > Logados;
+		std::vector<Servidor> servers;
 
-			std::vector<Usuario> Usuarios; //aqui vc precisaria usar std::
-			std::map <int, std::pair<unsigned int, unsigned int> > Logados;
-			std::vector<Servidor> servers;
 
   	public:
 

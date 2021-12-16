@@ -1,12 +1,15 @@
-#ifndef Servidor_h //essa proteção é necessária em C/C++ para evitar inclusão duplicada do arquivo
-#define Servidor_h
-
+#ifndef SERVER_H
+#define SERVER_H
 #include <iostream>
+#include <vector>
+#include <string>
+#include <iostream>
+#include <map>
+#include <sstream>
+#include <algorithm>
 
-//#include "Canal_texto.h" removi pois não precisa pro checkin 3
-#include "Usuario.h" //precisei colocar
-
-//vc precisa separar implementação de .hpp
+#include "Usuario.h"
+#include "Canal.h"
 class Servidor
 {
 private:
@@ -14,50 +17,38 @@ private:
   std::string codigo_convite = "";
   std::string nome;
   std::string descricao;
-  std::vector<Usuario*> integrantes;//precisa do std::
-  //std::vector<Canal_texto> canais; //removi pq não precisa pro checkin 3
+  std::vector<Usuario*> integrantes;
+  std::vector<int> ids_logados;
+  std::vector<Canal> canais;
   Usuario* dono;
   
 
 public:
   Servidor(unsigned int id, std::string Nome, Usuario* DONO);
-  
   unsigned int retorna_id();
-  void set_desc(const std::string descricao);
   std::string retorna_nome();
-  void set_ID(int inteiro);
+  void set_desc(const std::string descricao);
+  Usuario retorna_dono();
   void modifica_convite(std::string novo);
+  std::string retorna_codigo();
+  void add_user(Usuario *usr);
+  void remove_user(Usuario* user);
+  unsigned int id_dono();
+  std::vector<Usuario*> retornar_usuarios();
+  std::string Lista_de_integrantes();
+  std::string Lista_de_canais();
+  std::string retorna_descricao();
+  int numero_de_integrantes();
+  void create_channel(std::string nome, Usuario* id);
+  int channels_size();
+  std::string  remove_channel(std::string nome, unsigned int id);
+  bool retorna_channel(std::string nome);
+  void add_user_Canal();
+  unsigned int retorna_id_canal(std::string nome);
+  void send_msg(unsigned int id_user, unsigned int id_canal, std::string msg);
+  std::string historico(unsigned int id_canal);
+  bool esta_em(unsigned int id);
+  void remover_user(unsigned int id);
 };
-
-//essa parte aqui fica em Servidor.cpp, vc precisa atualizar o CMakeLists para incluir Servidor.cpp na compilação
-Servidor::Servidor(unsigned int id, std::string Nome, Usuario* DONO)
-{
-  ID = id;
-  nome = Nome;
-  dono = DONO;
-}
-
-
-unsigned int Servidor::retorna_id(){
-  return ID;
-}
-
-void Servidor::set_desc( const std::string descricao){
-  
-  this->descricao = descricao;
-  
-  }
-
-void Servidor::set_ID(int inteiro){
-  this->ID = inteiro ;
-}
-
-std::string Servidor::retorna_nome(){
-return nome;
-}
-
-void  Servidor::modifica_convite(std::string novo){
-  codigo_convite = novo;
-}
 
 #endif

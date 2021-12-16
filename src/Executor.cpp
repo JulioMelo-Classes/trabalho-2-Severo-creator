@@ -5,6 +5,7 @@
 #include <sstream>
 #include <queue>
 
+
 using namespace std;
 
 // Função de apoio que recebe um istringstream e

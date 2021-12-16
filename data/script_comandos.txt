@@ -8,7 +8,7 @@ disconnect 1
 login isaacfranco@imd.ufrn.br SENHA_ERRADA
 login isaacfranco@imd.ufrn.br senhalegal
 login julio@imd.ufrn.br senha
-create-server 0 servidor-legal
+create-server 1 servidor-legal
 set-server-desc 0 servidor-legal Um servidor muito banaca e coisa e tal
 create-server 0 servidor-ruim
 set-server-desc 0 servidor-ruim Um servidor lixo total
@@ -21,7 +21,7 @@ set-server-invite-code 0 servidor-legal 321
 set-server-invite-code 0 servidor-legal
 set-server-invite-code 0 servidor-inexistente 123
 set-server-invite-code 0 servidor-inexistente
-list-servers 0
+list-servers 1
 
 enter-server 0 servidor-legal
 enter-server 1 servidor-legal

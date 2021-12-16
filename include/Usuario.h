@@ -1,5 +1,5 @@
-#ifndef Usuario_h //precisa colocar senão vai dar redefinição
-#define Usuario_h
+#ifndef USUARIO_H
+#define USUARIO_H
 
 #include <iostream>
 
@@ -10,36 +10,15 @@ private:
   std::string email;
   std::string senha;
   unsigned int ID;
-  
 public:
-  Usuario(std::string em, std::string sen, std::string nome, unsigned int id);
-  std::string retorna_nome();
+  Usuario(const std::string em,const std::string sen,const std::string nome, unsigned int id);
+  unsigned int retorna_ID();
   std::string retorna_email();
   std::string retorna_senha();
-  unsigned int retorna_ID();
+  std::string retorna_nome();
 };
 
-//essa parte aqui fica em Usuario.cpp
-Usuario::Usuario(std::string em, std::string sen, std::string nom, unsigned int id)
-{
-  this->email = em;
-  this->senha = sen;
-  this->nome = nom;
-  this->ID = id;
-}
-std::string Usuario::retorna_nome(){return nome;
-}
 
-std::string Usuario::retorna_email(){
-  return email;
-}
 
-std::string Usuario::retorna_senha(){
-  return senha;
-}
-
-unsigned int Usuario::retorna_ID(){
-  return ID;
-}
 
 #endif
