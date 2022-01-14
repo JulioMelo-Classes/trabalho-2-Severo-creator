@@ -34,3 +34,39 @@ Ou pode criar um arquivo de texto com uma lista de comandos (um por linha) e exe
 cd build
 ./concordo < ../data/script_comandos.txt
 ```
+
+# Avaliação
+## Funcionalidades
+- A1.2 ok
+- A1.3 ok
+- A1.4 ok
+- A2.1 ok
+- A2.2 ok
+- A2.3 ok
+- A2.4 ok
+- A2.5 ok
+- A2.6 ok
+- A2.7 ok
+- A2.8 ok
+- A2.9 ok
+- B1.1 ok
+- B1.2 ok 
+- B1.3 ok
+- B1.4 ok
+- B1.5 ok
+- B2.1 ok
+- B2.2 ok
+
+## Classes
+- Servidor ok
+- Canal ok
+- Mensagem ok
+
+## Boas Práticas
+- Documentação nok
+- Testes 50%
+Acho que a quantidade de testes poderia ser maior e melhor documentada
+- Organização 50%
+Mistura de implementações no .h com implementações no .cpp e alguns erros de indentação
+
+## Observações
